@@ -3,7 +3,7 @@
 class Bank_Account:
     def __init__(self):
         self.balance=0
-        print("Deposit & Withdrawal Machine Initiating.....")
+        print("Deposit & Withdrawal Support Initiating.....")
  
     def depositMoney(self):
         amount=float(input("Enter amount to be Deposited: "))
