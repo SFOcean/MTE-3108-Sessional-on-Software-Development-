@@ -1,18 +1,18 @@
-handle = open("mbox.txt")
-d=dict()
-for line in handle:
-    if not line.startswith("From "): 
-        continue
-    else:    
-        line=line.split()
-        line=line[5]
-        line=line[0:2]
-        d[line]=d.get(line,0)+1
-
-lst=list()        
-for value,count in d.items():
-    lst.append((value,count))
-
+#Opening and reading mbox.txt file
+f=open('mbox.txt')
+hours=dict()
+#Looping through line by line
+for line in f:
+    if line.startswith('From '):
+        c=line.split()
+        n=len(c)
+        time=c[n-2]
+        hour=time.split(':')[0]
+        hours[hour]=hours.get(hour,0)+1
+#Listing the distribution
+lst=list(hours.keys())
 lst.sort()
-for value,count in lst:
-    print value,count
+#Creating a table for hourse and mail number
+print('Hours'+'      -  Mail Numbers')
+for key in lst:
+    print(key,'              ',hours[key])
